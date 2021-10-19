@@ -20,7 +20,8 @@ io.on("connection", (socket) => {
   // console.log("Connection is success")
   socket.on("chatting", (data)=> {
     console.log(data);
-    io.emit("chatting", `Hi, I am server, nice to meet you ${data} `)
+    // server - just send 
+    io.emit("chatting", data)
   })
 })
 
