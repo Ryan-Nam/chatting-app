@@ -21,6 +21,9 @@ sendButton.addEventListener("click", ()=>{
 
 
 socket.on("chatting", (data)=>{
+  const li = document.createElement("li");
+  li.innerText = `${data.name} - ${data.msg}`;
+  chatList.appendChild(li);
   console.log(data);
 })
 
