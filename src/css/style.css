@@ -91,6 +91,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
 
 .profile .user {
@@ -110,5 +111,18 @@ body {
   border-radius: 5px;
   padding: 0.5rem;
   font-size: 12px;
+  flex: 7;
+}
+
+.time {
+  font-size: 10px;
   margin: 0 5px;
+}
+
+.sent .message {
+  background: #ffeb33;
+}
+
+.received .message {
+  background: #fff;
 }
