@@ -27,11 +27,51 @@ body {
   padding: 0.5rem;
 }
 
+.user-container label {
+  font-size: 14px;
+  margin-right: 1rem;
+}
+
+.user-container input {
+  border-radius: 3px;
+  border: none;
+  height: 100%;
+}
+
+/* real chatting */
 .display-container {
   background: #b2c7d9;
   flex: 12;
+  /* chatting ㅇ이 많아지면 스크롤 */
+  overflow-y: scroll;
 }
 
 .input-container {
-  flex: 2;
+  flex: 1;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.input-container span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.3rem;
+  width: 100%;
+}
+
+.chatting-input {
+  font-size: 12px;
+  height: 100%;
+  flex: 8;
+  border: none;
+}
+
+.send-button {
+  flex: 1;
+  background: #ffeb33;
+  border: none;
+  height: 100%;
+  border-radius: 3px;
 }
