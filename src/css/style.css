@@ -119,6 +119,11 @@ body {
   margin: 0 5px;
 }
 
+.sent {
+  flex-direction: row-reverse;
+  float: right;
+}
+
 .sent .message {
   background: #ffeb33;
 }
