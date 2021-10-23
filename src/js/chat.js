@@ -41,6 +41,7 @@ function LiModel(name, msg, time){
 
   this.makeLi = ()=> {
     const li = document.createElement("li");
+    li.classList.add(nickname.value === this.name ? "sent": "received")
     const dom = `<span class="profile">
     <span class="user">${this.name}</span>
     <img class="image" src="https://placeimg.com/50/50/any" alt="any">
