@@ -19,6 +19,10 @@ const io = socketIO(server);
 //서버가 실행되면 실행될 파일 지정
 app.use(express.static(path.join(__dirname, "src")));
 
+// 서버 실행을 위해 port 필요
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, ()=> console.log(`Server is running ${PORT}`))
+
 
 io.on("connection", (socket) => {
   // console.log("Connection is success")
@@ -42,6 +46,3 @@ io.on("connection", (socket) => {
 //   })
 // })
 
-// 서버 실행을 위해 port 필요
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, ()=> console.log(`Server is running ${PORT}`))

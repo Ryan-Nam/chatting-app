@@ -24,7 +24,7 @@ socket.on("chatting", (data)=>{
   // const li = document.createElement("li");
   // li.innerText = `${data.name} - ${data.msg}`;
   // chatList.appendChild(li);
-  // console.log(data);
+  console.log(data);
 
   // 초기화
   const {name, msg, time } = data;
