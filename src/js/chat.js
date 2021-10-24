@@ -8,15 +8,24 @@ const chatList = document.querySelector(".chatting-list");
 const chatInput = document.querySelector(".chatting-input");
 const sendButton = document.querySelector(".send-button");
 
-// Event 
-sendButton.addEventListener("click", ()=>{
-  // make it as object
+const displayContainer = document.querySelector(".display-container")
+
+chatInput.addEventListener("keypress", (event)=> {
+  if (event.keycode === 13){
+    send()
+  }
+})
+
+function sned(){
   const param = {
     name: nickname.value,
     msg: chatInput.value
   }
   socket.emit("chatting", param);
-})
+}
+
+// Event 
+sendButton.addEventListener("click", send)
 
 
 
@@ -30,6 +39,8 @@ socket.on("chatting", (data)=>{
   const {name, msg, time } = data;
   const item = new LiModel(name, msg, time);
   item.makeLi();
+
+  displayContainer.scrollTo(0, displayContainer.scrollHeight)
 })
 
 // console.log(socket);
