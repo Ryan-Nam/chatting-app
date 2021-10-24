@@ -23,11 +23,24 @@ app.use(express.static(path.join(__dirname, "src")));
 io.on("connection", (socket) => {
   // console.log("Connection is success")
   socket.on("chatting", (data)=> {
-    console.log(data);
-    // server - just send 
-    io.emit("chatting", data)
+    const {name, msg} = data;
+    io.emit("chatting", {
+      name,
+      msg,
+      time: momnet(new Date()).format("h:ss A")
+    })
   })
-})
+  
+  })
+
+//     // from front
+//     const {} = data;
+
+//     console.log(data);
+//     // server - just send 
+//     io.emit("chatting", data)
+//   })
+// })
 
 // 서버 실행을 위해 port 필요
 const PORT = process.env.PORT || 5000;
